@@ -2,6 +2,16 @@ apiVersion: v1
 entries:
   luscsi:
   - apiVersion: v2
+    appVersion: 0.1.1
+    created: "2025-06-25T07:55:27.071449328Z"
+    description: A Helm chart for Kubernetes
+    digest: 3d8be8a890c1554402eba80576be233c5c206ed952d87949835b27e00512e007
+    name: luscsi
+    type: application
+    urls:
+    - https://github.com/luskits/luscsi/releases/download/v0.1.1/luscsi-v0.1.1.tgz
+    version: v0.1.1
+  - apiVersion: v2
     appVersion: 0.1.0
     created: "2025-06-11T07:05:53.399913162Z"
     description: A Helm chart for Kubernetes
@@ -11,4 +21,4 @@ entries:
     urls:
     - https://github.com/luskits/luscsi/releases/download/v0.1.0/luscsi-v0.1.0.tgz
     version: v0.1.0
-generated: "2025-06-11T07:05:53.399923902Z"
+generated: "2025-06-25T07:55:27.071457463Z"
