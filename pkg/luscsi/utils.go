@@ -103,5 +103,5 @@ func GetLustreServerVersion() string {
 	}
 
 	klog.Infof("lustre server version is: %s", string(output))
-	return string(output)
+	return strings.TrimSpace(string(output))
 }
