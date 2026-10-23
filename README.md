@@ -36,6 +36,9 @@ helm install luscsi luscsi/luscsi -n luscsi --create-namespace \
 --set global.k8sImageRegistry=m.daocloud.io/registry.k8s.io
 ```
 
+The diagnostic commands below use the `luscsi` namespace from this installation.
+If you install into a different namespace, use that namespace in those commands.
+
 ### 2. Create StorageClass
 Define a StorageClass with the required parameters:
 
@@ -104,19 +107,19 @@ go mod tidy
 ### Debug
 Enable debug logs:
 ```bash
-kubectl logs <driver-pod> -c luscsi
+kubectl logs -n luscsi <driver-pod> -c luscsi
 ```
 ## FAQ
 ### Q: How to check if the driver is running correctly?
 A: Use the following command to check the status of the CSI driver:
 
 ```bash
-kubectl get pods -n kube-system | grep luscsi
+kubectl get pods -n luscsi | grep luscsi
 ````
 
 ### Q: How to troubleshoot mount failures?
 A: Check the logs of the driver pod for any error messages:
 
 ```bash
-kubectl logs <driver-pod> -c luscsi
+kubectl logs -n luscsi <driver-pod> -c luscsi
 ```

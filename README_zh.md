@@ -34,6 +34,9 @@ helm install luscsi luscsi/luscsi -n luscsi --create-namespace \
 --set global.k8sImageRegistry=m.daocloud.io/registry.k8s.io
 ```
 
+下面的诊断命令使用本次安装指定的 `luscsi` 命名空间。
+如果安装时选择了其他命名空间，请相应调整诊断命令。
+
 ### 2. 创建 StorageClass
 定义一个 StorageClass，指定所需的参数：
 
@@ -104,7 +107,7 @@ go mod tidy
 ### 调试
 启用调试日志：
 ```bash
-kubectl logs <driver-pod> -c luscsi
+kubectl logs -n luscsi <driver-pod> -c luscsi
 ```
 
 
@@ -113,14 +116,14 @@ kubectl logs <driver-pod> -c luscsi
 ### Q: 如何检查驱动程序是否正常运行？
 A: 使用以下命令检查 CSI 驱动程序的状态：
     ```bash
-    kubectl get pods -n kube-system | grep luscsi
+    kubectl get pods -n luscsi | grep luscsi
     ```
 
 
 ### Q: 如何排查挂载失败的问题？
 A: 查看驱动程序的日志，定位具体的错误信息：
 ```bash
-kubectl logs <driver-pod> -c luscsi
+kubectl logs -n luscsi <driver-pod> -c luscsi
 ```
 
 
